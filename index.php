@@ -7,132 +7,124 @@
 
 <body>
 
-<h1 align=center>Swiatlo</h1>
+<h1 align=center>Światło</h1>
 
 
 <?php
-if (isset($_POST['malyon'])){
-shell_exec('/usr/bin/curl http://192.168.0.21:8080/maly/on');
+if (isset($_POST['a1'])){
+shell_exec('/usr/bin/curl http://192.168.0.21:8080/relay/a1/toogle');
 }
 ?>
 <form align=center action="index.php" method="post">
-	<input align=center type="hidden" name="malyon" value="true">
+	<input align=center type="hidden" name="a1" value="true">
         <p align=center>
-                <input align=center type="submit" value="MALY ON" style="width:300px; height:40px; font-size: 20px;">
+<?php
+$var=shell_exec('/usr/bin/curl http://192.168.0.21:8080/relay/a1/status');
+if ( $var == 'ON'){
+              echo  '<input align=center type="submit" value="MAŁY POKÓJ: ON" style="width:300px; height:40px; font-size: 20px;">';
+}
+else {
+              echo  ' <input align=center type="submit" value="MAŁY POKÓJ: OFF" style="width:300px; height:40px; font-size: 20px;">';
+}
+
+?>
+
         </p>
 </form>
 
 <?php
-if (isset($_POST['malyoff'])){
-shell_exec('/usr/bin/curl http://192.168.0.21:8080/maly/off');
+if (isset($_POST['a2'])){
+shell_exec('/usr/bin/curl http://192.168.0.21:8080/relay/a2/toogle');
 }
 ?>
 <form align=center action="index.php" method="post">
-        <input align=center type="hidden" name="malyoff" value="true">
+        <input align=center type="hidden" name="a2" value="true">
         <p align=center>
-                <input align=center type="submit" value="MALY OFF" style="width:300px; height:40px; font-size: 20px;">
+<?php
+$var=shell_exec('/usr/bin/curl http://192.168.0.21:8080/relay/a2/status');
+if ( $var == 'ON'){
+              echo  '<input align=center type="submit" value="DUŻY POKÓJ 70%: ON" style="width:300px; height:40px; font-size: 20px;">';
+}
+else {
+              echo  ' <input align=center type="submit" value="DUŻY POKÓJ 70%: OFF" style="width:300px; height:40px; font-size: 20px;">';
+}
+
+?>
+
         </p>
 </form>
 
-<?php
-if (isset($_POST['duzy3on'])){
-shell_exec('/usr/bin/curl http://192.168.0.21:8080/duzy3/on');
-}
-?>
-<form align=center action="index.php" method="post">
-        <input align=center type="hidden" name="duzy3on" value="true">
-        <p align=center>
-                <input align=center type="submit" value="DUZY3 ON" style="width:300px; height:40px; font-size: 20px;">
-        </p>
-</form>
+
+
 
 <?php
-if (isset($_POST['duzy3off'])){
-shell_exec('/usr/bin/curl http://192.168.0.21:8080/duzy3/off');
+if (isset($_POST['a3'])){
+shell_exec('/usr/bin/curl http://192.168.0.21:8080/relay/a3/toogle');
 }
 ?>
 <form align=center action="index.php" method="post">
-        <input align=center type="hidden" name="duzy3off" value="true">
+        <input align=center type="hidden" name="a3" value="true">
         <p align=center>
-                <input align=center type="submit" value="DUZY3 OFF" style="width:300px; height:40px; font-size: 20px;">
-        </p>
-</form>
-
 <?php
-if (isset($_POST['duzy2on'])){
-shell_exec('/usr/bin/curl http://192.168.0.21:8080/duzy2/on');
+$var=shell_exec('/usr/bin/curl http://192.168.0.21:8080/relay/a3/status');
+if ( $var == 'ON'){
+              echo  '<input align=center type="submit" value="DUŻY POKÓJ 30%: ON" style="width:300px; height:40px; font-size: 20px;">';
 }
-?>
-<form align=center action="index.php" method="post">
-        <input align=center type="hidden" name="duzy2on" value="true">
-        <p align=center>
-                <input align=center type="submit" value="DUZY2 ON" style="width:300px; height:40px; font-size: 20px;">
-        </p>
-</form>
+else {
+              echo  ' <input align=center type="submit" value="DUŻY POKÓJ 30%: OFF" style="width:300px; height:40px; font-size: 20px;">';
+}
 
-<?php
-if (isset($_POST['duzy2off'])){
-shell_exec('/usr/bin/curl http://192.168.0.21:8080/duzy2/off');
-}
 ?>
-<form align=center action="index.php" method="post">
-        <input align=center type="hidden" name="duzy2off" value="true">
-        <p align=center>
-                <input align=center type="submit" value="DUZY2 OFF" style="width:300px; height:40px; font-size: 20px;">
+
         </p>
 </form>
 
 
 
 <?php
-if (isset($_POST['hol2on'])){
-shell_exec('/usr/bin/curl http://192.168.0.21:8080/hol2/on');
+if (isset($_POST['a4'])){
+shell_exec('/usr/bin/curl http://192.168.0.21:8080/relay/a4/toogle');
 }
 ?>
 <form align=center action="index.php" method="post">
-        <input align=center type="hidden" name="hol2on" value="true">
+        <input align=center type="hidden" name="a4" value="true">
         <p align=center>
-                <input align=center type="submit" value="HOL2 ON" style="width:300px; height:40px; font-size: 20px;">
+<?php
+$var=shell_exec('/usr/bin/curl http://192.168.0.21:8080/relay/a4/status');
+if ( $var == 'ON'){
+              echo  '<input align=center type="submit" value="PRZEDPOKÓJ 70%: ON" style="width:300px; height:40px; font-size: 20px;">';
+}
+else {
+              echo  ' <input align=center type="submit" value="PRZEDPOKÓJ 70%: OFF" style="width:300px; height:40px; font-size: 20px;">';
+}
+
+?>
+
         </p>
 </form>
+
 
 <?php
-if (isset($_POST['hol2off'])){
-shell_exec('/usr/bin/curl http://192.168.0.21:8080/hol2/off');
+if (isset($_POST['a5'])){
+shell_exec('/usr/bin/curl http://192.168.0.21:8080/relay/a5/toogle');
 }
 ?>
 <form align=center action="index.php" method="post">
-        <input align=center type="hidden" name="hol2off" value="true">
+        <input align=center type="hidden" name="a5" value="true">
         <p align=center>
-                <input align=center type="submit" value="HOL2 OFF" style="width:300px; height:40px; font-size: 20px;">
-        </p>
-</form>
-
 <?php
-if (isset($_POST['hol1on'])){
-shell_exec('/usr/bin/curl http://192.168.0.21:8080/hol1/on');
+$var=shell_exec('/usr/bin/curl http://192.168.0.21:8080/relay/a5/status');
+if ( $var == 'ON'){
+              echo  '<input align=center type="submit" value="PRZEDPOKÓJ 30%: ON" style="width:300px; height:40px; font-size: 20px;">';
 }
+else {
+              echo  ' <input align=center type="submit" value="PRZEDPOKÓJ 30%: OFF" style="width:300px; height:40px; font-size: 20px;">';
+}
+
 ?>
-<form align=center action="index.php" method="post">
-        <input align=center type="hidden" name="hol1on" value="true">
-        <p align=center>
-                <input align=center type="submit" value="HOL1 ON" style="width:300px; height:40px; font-size: 20px;">
+
         </p>
 </form>
-
-<?php
-if (isset($_POST['hol1off'])){
-shell_exec('/usr/bin/curl http://192.168.0.21:8080/hol1/off');
-}
-?>
-<form align=center action="index.php" method="post">
-        <input align=center type="hidden" name="hol1off" value="true">
-        <p align=center>
-                <input align=center type="submit" value="HOL1 OFF" style="width:300px; height:40px; font-size: 20px;">
-        </p>
-</form>
-
-
 
 
 
