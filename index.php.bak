@@ -104,13 +104,7 @@ $(document).ready(function(){
 
 
 <body>
-
-<h1 style="font-size: 50px;" align=center>Światło</h1>
-
-<table style="width:100%">
-<tr>
-<th><a style="font-size: 50px">MALY POKOJ</a></th>
-<th>
+<a style="font-size: 50px">MALY POKOJ</a>
 <label class="switch">
 <?php
 	$output=shell_exec('/usr/bin/curl http://192.168.0.21:8080/relay/status/a1');
@@ -123,12 +117,9 @@ $(document).ready(function(){
 ?>
   <div class="slider round"></div>
 </label>
-</th>
-</tr>
-<tr>
-<th>
-<a style="font-size: 50px">DUZY POKOJ 70%</a></th>
-<th>
+<p></p>
+
+<a style="font-size: 50px">DUZY POKOJ 70%</a>
 <label class="switch">
 <?php
 	$output=shell_exec('/usr/bin/curl http://192.168.0.21:8080/relay/status/a2');
@@ -141,12 +132,9 @@ $(document).ready(function(){
 ?>
   <div class="slider round"></div>
 </label>
-</th>
-</tr>
-<tr>
-<th>
-<a style="font-size: 50px">DUZY POKOJ 30%</a></th>
-<th>
+<p></p>
+
+<a style="font-size: 50px">DUZY POKOJ 30%</a>
 <label class="switch">
 <?php
 	$output=shell_exec('/usr/bin/curl http://192.168.0.21:8080/relay/status/a3');
@@ -159,12 +147,9 @@ $(document).ready(function(){
 ?>
   <div class="slider round"></div>
 </label>
-</th>
-</tr>
-<tr>
-<th>
-<a style="font-size: 50px">PRZEDPOKOJ 70%</a></th>
-<th>
+<p></p>
+
+<a style="font-size: 50px">PRZEDPOKOJ 70%</a>
 <label class="switch">
 <?php
 	$output=shell_exec('/usr/bin/curl http://192.168.0.21:8080/relay/status/a4');
@@ -177,12 +162,9 @@ $(document).ready(function(){
 ?>
   <div class="slider round"></div>
 </label>
-</th>
-</tr>
-<tr>
-<th>
-<a style="font-size: 50px">PRZEDPOKOJ 30%</a></th>
-<th>
+<p></p>
+
+<a style="font-size: 50px">PRZEDPOKOJ 30%</a>
 <label class="switch">
 <?php
 	$output=shell_exec('/usr/bin/curl http://192.168.0.21:8080/relay/status/a5');
@@ -195,20 +177,13 @@ $(document).ready(function(){
 ?>
   <div class="slider round"></div>
 </label>
-</th>
-</tr>
-<tr>
+<p></p>
 
-</tr>
-</table>
+
 
 <h1 style="font-size: 50px;" align=center>Opcje</h1>
 
-<table style="width:100%">
-<tr>
-<th>
-<a style="font-size: 50px">TALK</a></th>
-<th>
+<a style="font-size: 50px">TALK</a>
 <label class="switch">
 <?php
 	$output=shell_exec('/usr/bin/curl http://192.168.0.21:8080/talk/status');
@@ -221,9 +196,10 @@ $(document).ready(function(){
 ?>
   <div class="slider round"></div>
 </label>
-</th>
-</tr>
-</table>
+
+
+
+
 
 
 
