@@ -27,6 +27,11 @@ if (isset($_POST['a4execute'])){
 if (isset($_POST['a5execute'])){
 	$output1 = shell_exec('/usr/bin/curl http://192.168.0.21:8080/relay/toogle/a5');
 }
+
+if (isset($_POST['talk1execute'])){
+	$output1 = shell_exec('/usr/bin/curl http://192.168.0.21:8080/relay/talk/toogle');
+}
+
 ?>
 
 </body>

@@ -80,12 +80,19 @@ $(document).ready(function(){
         $.post("exec.php", "a3execute", function(data) {
     });
     });
+
     $("#a4check").click(function(){
         $.post("exec.php", "a4execute", function(data) {
     });
     });
+
     $("#a5check").click(function(){
         $.post("exec.php", "a5execute", function(data) {
+    });
+    });
+
+    $("#talk1check").click(function(){
+        $.post("exec.php", "talk1execute", function(data) {
     });
     });
 });
@@ -97,7 +104,6 @@ $(document).ready(function(){
 
 
 <body>
-
 <a style="font-size: 50px">MALY POKOJ</a>
 <label class="switch">
 <?php
@@ -111,6 +117,7 @@ $(document).ready(function(){
 ?>
   <div class="slider round"></div>
 </label>
+<p></p>
 
 <a style="font-size: 50px">DUZY POKOJ 70%</a>
 <label class="switch">
@@ -125,6 +132,7 @@ $(document).ready(function(){
 ?>
   <div class="slider round"></div>
 </label>
+<p></p>
 
 <a style="font-size: 50px">DUZY POKOJ 30%</a>
 <label class="switch">
@@ -139,6 +147,7 @@ $(document).ready(function(){
 ?>
   <div class="slider round"></div>
 </label>
+<p></p>
 
 <a style="font-size: 50px">PRZEDPOKOJ 70%</a>
 <label class="switch">
@@ -153,6 +162,7 @@ $(document).ready(function(){
 ?>
   <div class="slider round"></div>
 </label>
+<p></p>
 
 <a style="font-size: 50px">PRZEDPOKOJ 30%</a>
 <label class="switch">
@@ -167,31 +177,30 @@ $(document).ready(function(){
 ?>
   <div class="slider round"></div>
 </label>
+<p></p>
 
 
 
 <h1 style="font-size: 50px;" align=center>Opcje</h1>
+
+<a style="font-size: 50px">TALK</a>
+<label class="switch">
 <?php
-if (isset($_POST['talk'])){
-shell_exec('/usr/bin/curl http://192.168.0.21:8080/talk/toogle');
-}
-?>
-<form align=center action="index.php" method="post">
-        <input align=center type="hidden" name="talk" value="true">
-        <p align=center>
-<?php
-$var=shell_exec('/usr/bin/curl http://192.168.0.21:8080/talk/status');
-if ( $var == 'ON'){
-              echo  '<input align=center type="submit" value="TALK: ON" style="width:700px; height:200px; font-size: 50px;">';
-}
-else {
-              echo  ' <input align=center type="submit" value="TALK: OFF" style="width:700px; height:200px; font-size: 50px;">';
-}
+	$output=shell_exec('/usr/bin/curl http://192.168.0.21:8080/talk/status');
+	if ( $output == 'ON' ) {
+			echo '<input id="talk1check"  type="checkbox" checked>';
+		} else {
+			echo '<input id="talk1check" type="checkbox">';
+		}
 
 ?>
+  <div class="slider round"></div>
+</label>
 
-        </p>
-</form>
+
+
+
+
 
 
 
