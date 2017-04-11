@@ -56,12 +56,16 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+img {
+    border-radius: 30px;
+}
+
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="Refresh" content="15" />
-<title>Monitoring - wojzy.adrianozy.net</title>
+<title>Supernova</title>
 
 
 <script>
@@ -95,7 +99,20 @@ $(document).ready(function(){
         $.post("exec.php", "talk1execute", function(data) {
     });
     });
+
+
+
 });
+
+var int=self.setInterval("reload()",1000);
+
+function reload(){
+   $.post("exec.php", "cam1execute", function(data) {
+   $("#webcam1").attr("src", "image.jpg");
+});
+};
+
+
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="Refresh" content="15" />
@@ -225,9 +242,12 @@ $(document).ready(function(){
 </tr>
 </table>
 
-
+<p align=center>
+	<img src="image.jpg" id="webcam1" alt="KAMERA WYLACZONA" />
+</p>
 
 
 
 </body>
+
 
