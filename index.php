@@ -104,18 +104,18 @@ $(document).ready(function(){
 
 });
 
-var int=self.setInterval("reload()",1000);
-
+var int=self.setInterval("reload()",2000);
 function reload(){
+   d = new Date();
    $.post("exec.php", "cam1execute", function(data) {
-   $("#webcam1").attr("src", "image.jpg");
+   $("#webcam1").attr("src", "image.jpg?"+d.getTime());
 });
 };
 
 
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="Refresh" content="15" />
+<meta http-equiv="Refresh" content="60" />
 <title>Monitoring - shadow.adrianozy.net</title>
 </head>
 

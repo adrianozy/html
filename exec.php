@@ -33,7 +33,7 @@ if (isset($_POST['talk1execute'])){
 }
 
 if (isset($_POST['cam1execute'])){
-	$output1 = shell_exec('/usr/bin/curl -o /var/www/html/image.jpg http://192.168.0.21:8080/cam/get/image.jpg');
+	$output1 = shell_exec('/usr/bin/curl -o /var/www/html/image.jpg http://192.168.0.23:8081/cam/get/camera1.jpg');
 }
 ?>
 
