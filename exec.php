@@ -35,6 +35,17 @@ if (isset($_POST['talk1execute'])){
 if (isset($_POST['cam1execute'])){
 	$output1 = shell_exec('/usr/bin/curl -o /var/www/html/image.jpg http://192.168.0.23:8081/cam/get/camera1.jpg');
 }
+
+if (isset($_POST['cam2execute'])){
+	$output1 = shell_exec('/usr/bin/curl -o /var/www/html/camera1.jpg http://192.168.0.22:8081/cam/get/camera1.jpg');
+}
+
+if (isset($_POST['cam3execute'])){
+	$output1 = shell_exec('/usr/bin/curl -o /var/www/html/camera2.jpg http://192.168.0.22:8081/cam/get/camera2.jpg');
+}
+
+
+
 ?>
 
 </body>

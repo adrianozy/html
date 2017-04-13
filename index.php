@@ -104,12 +104,18 @@ $(document).ready(function(){
 
 });
 
-var int=self.setInterval("reload()",2000);
+var int=self.setInterval("reload()",3000);
 function reload(){
    d = new Date();
    $.post("exec.php", "cam1execute", function(data) {
-   $("#webcam1").attr("src", "image.jpg?"+d.getTime());
 });
+   $.post("exec.php", "cam2execute", function(data) {
+});
+   $.post("exec.php", "cam3execute", function(data) {
+});
+   $("#webcam1").attr("src", "image.jpg?"+d.getTime());
+   $("#webcam2").attr("src", "camera1.jpg?"+d.getTime());
+   $("#webcam3").attr("src", "camera2.jpg?"+d.getTime());
 };
 
 
@@ -241,9 +247,12 @@ function reload(){
 </th>
 </tr>
 </table>
+<h1 style="font-size: 50px;" align=center>Kamery</h1>
 
 <p align=center>
 	<img src="image.jpg" id="webcam1" alt="KAMERA WYLACZONA" />
+	<img src="camera1.jpg" id="webcam2" alt="KAMERA WYLACZONA" />
+	<img src="camera2.jpg" id="webcam3" alt="KAMERA WYLACZONA" />
 </p>
 
 
