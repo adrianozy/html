@@ -264,7 +264,7 @@ function reload(){
 
 
 <table style="width:100%" align=center>
-<tr><th>
+<tr><th colspan="2">
 	<img src="image.jpg" id="webcam1" alt="KAMERA WYLACZONA" />
 </th></tr>
 <tr><th>
@@ -284,7 +284,7 @@ function reload(){
 </label>
 </th></tr>
 
-<tr><th>
+<tr><th colspan="2">
 
 	<img src="camera1.jpg" id="webcam2" alt="KAMERA WYLACZONA" />
 </th></tr>
@@ -307,7 +307,7 @@ function reload(){
 </th></tr>
 
 
-<tr><th>
+<tr><th colspan="2">
 	<img src="camera2.jpg" id="webcam3" alt="KAMERA WYLACZONA" />
 
 </th></tr>
