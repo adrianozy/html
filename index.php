@@ -100,7 +100,20 @@ $(document).ready(function(){
     });
     });
 
+    $("#cam1check").click(function(){
+        $.post("exec.php", "cam1toogle", function(data) {
+    });
+    });
 
+    $("#cam2check").click(function(){
+        $.post("exec.php", "cam2toogle", function(data) {
+    });
+    });
+
+    $("#cam3check").click(function(){
+        $.post("exec.php", "cam3toogle", function(data) {
+    });
+    });
 
 });
 
@@ -249,12 +262,76 @@ function reload(){
 </table>
 <h1 style="font-size: 50px;" align=center>Kamery</h1>
 
-<p align=center>
-	<img src="image.jpg" id="webcam1" alt="KAMERA WYLACZONA" />
-	<img src="camera1.jpg" id="webcam2" alt="KAMERA WYLACZONA" />
-	<img src="camera2.jpg" id="webcam3" alt="KAMERA WYLACZONA" />
-</p>
 
+<table style="width:100%" align=center>
+<tr><th>
+	<img src="image.jpg" id="webcam1" alt="KAMERA WYLACZONA" />
+</th></tr>
+<tr><th>
+<a style="font-size: 50px">MAŁY POKÓJ CAM1</a></th>
+<th>
+<label class="switch">
+<?php
+	$output=shell_exec('/usr/bin/curl http://192.168.0.23:8081/cam/status/cam1');
+	if ( $output == 'ON' ) {
+			echo '<input id="cam1check"  type="checkbox" checked>';
+		} else {
+			echo '<input id="cam1check" type="checkbox">';
+		}
+
+?>
+  <div class="slider round"></div>
+</label>
+</th></tr>
+
+<tr><th>
+
+	<img src="camera1.jpg" id="webcam2" alt="KAMERA WYLACZONA" />
+</th></tr>
+
+<tr><th>
+<a style="font-size: 50px">DUŻY POKÓJ CAM1</a></th>
+<th>
+<label class="switch">
+<?php
+	$output=shell_exec('/usr/bin/curl http://192.168.0.22:8081/cam/status/cam1');
+	if ( $output == 'ON' ) {
+			echo '<input id="cam2check"  type="checkbox" checked>';
+		} else {
+			echo '<input id="cam2check" type="checkbox">';
+		}
+
+?>
+  <div class="slider round"></div>
+</label>
+</th></tr>
+
+
+<tr><th>
+	<img src="camera2.jpg" id="webcam3" alt="KAMERA WYLACZONA" />
+
+</th></tr>
+
+<tr><th>
+<a style="font-size: 50px">DUŻY POKÓJ CAM2</a></th>
+<th>
+<label class="switch">
+<?php
+	$output=shell_exec('/usr/bin/curl http://192.168.0.22:8081/cam/status/cam2');
+	if ( $output == 'ON' ) {
+			echo '<input id="cam3check"  type="checkbox" checked>';
+		} else {
+			echo '<input id="cam3check" type="checkbox">';
+		}
+
+?>
+  <div class="slider round"></div>
+</label>
+</th></tr>
+
+
+
+</table>
 
 
 </body>

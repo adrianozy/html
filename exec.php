@@ -45,6 +45,17 @@ if (isset($_POST['cam3execute'])){
 }
 
 
+if (isset($_POST['cam1toogle'])){
+	$output1 = shell_exec('/usr/bin/curl http://192.168.0.23:8081/cam/toogle/cam1');
+}
+
+if (isset($_POST['cam2toogle'])){
+	$output1 = shell_exec('/usr/bin/curl http://192.168.0.22:8081/cam/toogle/cam1');
+}
+
+if (isset($_POST['cam3toogle'])){
+	$output1 = shell_exec('/usr/bin/curl http://192.168.0.22:8081/cam/toogle/cam2');
+}
 
 ?>
 
