@@ -115,6 +115,20 @@ $(document).ready(function(){
     });
     });
 
+    $("#light1tab").hide();
+    $("#opt1tab").hide();
+    $("#cam1tab").hide();
+
+    $("#light1button").click(function(){
+        $("#light1tab").toggle();
+    });
+    $("#opt1button").click(function(){
+        $("#opt1tab").toggle();
+    });
+    $("#cam1button").click(function(){
+        $("#cam1tab").toggle();
+    });
+
 });
 
 var int=self.setInterval("reload()",3000);
@@ -134,16 +148,22 @@ function reload(){
 
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="Refresh" content="60" />
 <title>Monitoring - shadow.adrianozy.net</title>
 </head>
 
 
 <body>
 
-<h1 style="font-size: 50px;" align=center>Światło</h1>
+<table style="width:100%" border=0>
+<tr><th align=right>
+<img src="ico/alarm_on.jpg"/>
+<img src="ico/camera_on.jpg"/>
+<img src="ico/light_on.jpg"/>
+</tr></th>
+<table>
+<button id="light1button" style="width:100%;height:200px;font-size: 70px;" align=cent>Światło</button>
 
-<table style="width:100%">
+<table style="width:100%" id="light1tab">
 <tr>
 <th><a style="font-size: 50px">MALY POKOJ</a></th>
 <th>
@@ -238,32 +258,11 @@ function reload(){
 </tr>
 </table>
 
-<h1 style="font-size: 50px;" align=center>Opcje</h1>
-
-<table style="width:100%">
-<tr>
-<th>
-<a style="font-size: 50px">TALK</a></th>
-<th>
-<label class="switch">
-<?php
-	$output=shell_exec('/usr/bin/curl http://192.168.0.21:8080/talk/status');
-	if ( $output == 'ON' ) {
-			echo '<input id="talk1check"  type="checkbox" checked>';
-		} else {
-			echo '<input id="talk1check" type="checkbox">';
-		}
-
-?>
-  <div class="slider round"></div>
-</label>
-</th>
-</tr>
-</table>
-<h1 style="font-size: 50px;" align=center>Kamery</h1>
 
 
-<table style="width:100%" align=center>
+<button id="cam1button" style="width:100%;height:200px;font-size: 70px;" align=cent>Kamery</button>
+
+<table style="width:100%" align=center id="cam1tab">
 <tr><th colspan="2">
 	<img src="image.jpg" id="webcam1" alt="KAMERA WYLACZONA" />
 </th></tr>
@@ -332,6 +331,37 @@ function reload(){
 
 
 </table>
+
+<button id="opt1button" style="width:100%;height:200px;font-size: 70px;" align=cent>Opcje</button>
+
+<table style="width:100%" id="opt1tab">
+<tr>
+<th>
+<a style="font-size: 50px">TALK</a></th>
+<th>
+<label class="switch">
+<?php
+	$output=shell_exec('/usr/bin/curl http://192.168.0.21:8080/talk/status');
+	if ( $output == 'ON' ) {
+			echo '<input id="talk1check"  type="checkbox" checked>';
+		} else {
+			echo '<input id="talk1check" type="checkbox">';
+		}
+
+?>
+  <div class="slider round"></div>
+</label>
+</th>
+</tr>
+</table>
+
+
+
+<table style="width:100%" border=1>
+<tr><th>
+<a style="font-size: 50px">SUPERNOVA by ADS</a></th>
+</tr></th>
+<table>
 
 
 </body>
