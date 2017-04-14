@@ -120,13 +120,13 @@ $(document).ready(function(){
     $("#cam1tab").hide();
 
     $("#light1button").click(function(){
-        $("#light1tab").toggle();
+        $("#light1tab").toggle(500);
     });
     $("#opt1button").click(function(){
-        $("#opt1tab").toggle();
+        $("#opt1tab").toggle(500);
     });
     $("#cam1button").click(function(){
-        $("#cam1tab").toggle();
+        $("#cam1tab").toggle(500);
     });
 
 });
@@ -155,7 +155,10 @@ function reload(){
 <body>
 
 <table style="width:100%" border=0>
-<tr><th align=right>
+<tr><th>
+<a style="font-size: 60px">SUPERNOVA</a>
+</th>
+<th align=right>
 <img src="ico/alarm_on.jpg"/>
 <img src="ico/camera_on.jpg"/>
 <img src="ico/light_on.jpg"/>
@@ -359,7 +362,7 @@ function reload(){
 
 <table style="width:100%" border=1>
 <tr><th>
-<a style="font-size: 50px">SUPERNOVA by ADS</a></th>
+<a style="font-size: 40px">Created by Adrianozy Digital Studio</a></th>
 </tr></th>
 <table>
 
