@@ -118,6 +118,7 @@ $(document).ready(function(){
     $("#light1tab").hide();
     $("#opt1tab").hide();
     $("#cam1tab").hide();
+    $("#window1tab").hide();
 
     $("#light1button").click(function(){
         $("#light1tab").toggle(500);
@@ -127,6 +128,9 @@ $(document).ready(function(){
     });
     $("#cam1button").click(function(){
         $("#cam1tab").toggle(500);
+    });
+    $("#window1button").click(function(){
+        $("#window1tab").toggle(500);
     });
 
 });
@@ -148,14 +152,14 @@ function reload(){
 
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Monitoring - shadow.adrianozy.net</title>
+<title>Supernova</title>
 </head>
 
 
 <body>
 
 <table style="width:100%" border=0>
-<tr><th>
+<tr><th align=left>
 <a style="font-size: 60px">SUPERNOVA</a>
 </th>
 <th align=right>
@@ -335,12 +339,21 @@ function reload(){
 
 </table>
 
-<button id="opt1button" style="width:100%;height:200px;font-size: 70px;" align=cent>Opcje</button>
+<button id="window1button" style="width:100%;height:200px;font-size: 70px;" align=cent>Czujniki</button>
+<table style="width:100%; font-size: 50px; text-align=center;" id="window1tab" border=1 align="center">
+<tr><td><a>Drzwi</a></td><td colspan=3><a>ZAMKNIĘTE</a></td></tr>
+<tr><td><a>Duży pokój</a></td><td><a>ZAMKNIĘTE</a></td><td><a>ZAMKNIĘTE</a></td><td><a>ZAMKNIĘTE</a></td></tr>
+<tr><td><a>Mały pokój</a></td><td colspan=2><a>ZAMKNIĘTE</a></td><td><a>ZAMKNIĘTE</a></td></tr>
+<tr><td><a>Kuchnia</a></td><td colspan=2><a>ZAMKNIĘTE</a></td><td><a>ZAMKNIĘTE</a></td></tr>
+</table>
+
+
+<button id="opt1button" style="width:100%;height:200px;font-size:70px;" align=center>Opcje</button>
 
 <table style="width:100%" id="opt1tab">
 <tr>
 <th>
-<a style="font-size: 50px">TALK</a></th>
+<a style="font-size: 50px">GADACZ</a></th>
 <th>
 <label class="switch">
 <?php
