@@ -36,6 +36,10 @@ if (isset($_POST['cam1execute'])){
 	$output1 = shell_exec('/usr/bin/curl -o /var/www/html/image.jpg http://192.168.0.23:8081/cam/get/camera1.jpg');
 }
 
+if (isset($_POST['cam1aexecute'])){
+	$output1 = shell_exec('/usr/bin/curl -o /var/www/html/image2.jpg http://192.168.0.23:8081/cam/get/camera2.jpg');
+}
+
 if (isset($_POST['cam2execute'])){
 	$output1 = shell_exec('/usr/bin/curl -o /var/www/html/camera1.jpg http://192.168.0.22:8081/cam/get/camera1.jpg');
 }
@@ -47,6 +51,10 @@ if (isset($_POST['cam3execute'])){
 
 if (isset($_POST['cam1toogle'])){
 	$output1 = shell_exec('/usr/bin/curl http://192.168.0.23:8081/cam/toogle/cam1');
+}
+
+if (isset($_POST['cam1atoogle'])){
+	$output1 = shell_exec('/usr/bin/curl http://192.168.0.23:8081/cam/toogle/cam2');
 }
 
 if (isset($_POST['cam2toogle'])){

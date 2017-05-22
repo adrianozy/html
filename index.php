@@ -105,6 +105,11 @@ $(document).ready(function(){
     });
     });
 
+    $("#cam1acheck").click(function(){
+        $.post("exec.php", "cam1atoogle", function(data) {
+    });
+    });
+
     $("#cam2check").click(function(){
         $.post("exec.php", "cam2toogle", function(data) {
     });
@@ -140,11 +145,14 @@ function reload(){
    d = new Date();
    $.post("exec.php", "cam1execute", function(data) {
 });
+   $.post("exec.php", "cam1aexecute", function(data) {
+});
    $.post("exec.php", "cam2execute", function(data) {
 });
    $.post("exec.php", "cam3execute", function(data) {
 });
    $("#webcam1").attr("src", "image.jpg?"+d.getTime());
+   $("#webcam1a").attr("src", "image2.jpg?"+d.getTime());
    $("#webcam2").attr("src", "camera1.jpg?"+d.getTime());
    $("#webcam3").attr("src", "camera2.jpg?"+d.getTime());
 };
@@ -289,6 +297,28 @@ function reload(){
   <div class="slider round"></div>
 </label>
 </th></tr>
+
+<tr><th colspan="2">
+	<img src="image2.jpg" id="webcam1a" alt="KAMERA WYLACZONA" />
+</th></tr>
+<tr><th>
+<a style="font-size: 50px">MAŁY POKÓJ CAM2</a></th>
+<th>
+<label class="switch">
+<?php
+	$output=shell_exec('/usr/bin/curl http://192.168.0.23:8081/cam/status/cam2');
+	if ( $output == 'ON' ) {
+			echo '<input id="cam1acheck"  type="checkbox" checked>';
+		} else {
+			echo '<input id="cam1acheck" type="checkbox">';
+		}
+
+?>
+  <div class="slider round"></div>
+</label>
+</th></tr>
+
+
 
 <tr><th colspan="2">
 
