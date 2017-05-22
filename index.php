@@ -353,7 +353,7 @@ function reload(){
 <table style="width:100%" id="opt1tab">
 <tr>
 <th>
-<a style="font-size: 50px">GADACZ</a></th>
+<a style="font-size: 50px">GADAJ NA ŚWIATŁO</a></th>
 <th>
 <label class="switch">
 <?php
@@ -368,6 +368,51 @@ function reload(){
   <div class="slider round"></div>
 </label>
 </th>
+</tr>
+<tr>
+<th>
+<a style="font-size: 50px">GADAJ NA OKNA</a></th>
+<th>
+<label class="switch">
+<?php
+	$output=shell_exec('/usr/bin/curl http://192.168.0.21:8080/talk/status');
+	if ( $output == 'ON' ) {
+			echo '<input id="talk1check"  type="checkbox" checked>';
+		} else {
+			echo '<input id="talk1check" type="checkbox">';
+		}
+
+?>
+  <div class="slider round"></div>
+</label>
+</th>
+</tr>
+<tr>
+<th>
+<a style="font-size: 50px">GADAJ GŁOŚNO</a></th>
+<th>
+<label class="switch">
+<?php
+	$output=shell_exec('/usr/bin/curl http://192.168.0.21:8080/talk/status');
+	if ( $output == 'ON' ) {
+			echo '<input id="talk1check"  type="checkbox" checked>';
+		} else {
+			echo '<input id="talk1check" type="checkbox">';
+		}
+
+?>
+  <div class="slider round"></div>
+</label>
+</th>
+</tr>
+<tr>
+<td colspan=2><button style="width:100%;height:150px;font-size:70px;" align=center>RESET</button></td>
+</tr>
+<tr>
+<td colspan=2><button style="width:100%;height:150px;font-size:70px;" align=center>REBOOT</button></td>
+</tr>
+<tr>
+<td colspan=2><button style="width:100%;height:150px;font-size:70px;" align=center>CERTYFIKAT</button></td>
 </tr>
 </table>
 
