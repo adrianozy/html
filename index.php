@@ -120,6 +120,11 @@ $(document).ready(function(){
     });
     });
 
+    $("#cam5check").click(function(){
+        $.post("exec.php", "cam5toogle", function(data) {
+    });
+    });
+
     $("#light1tab").hide();
     $("#opt1tab").hide();
     $("#cam1tab").hide();
@@ -151,10 +156,13 @@ function reload(){
 });
    $.post("exec.php", "cam3execute", function(data) {
 });
+   $.post("exec.php", "cam5execute", function(data) {
+});
    $("#webcam1").attr("src", "image.jpg?"+d.getTime());
    $("#webcam1a").attr("src", "image2.jpg?"+d.getTime());
    $("#webcam2").attr("src", "camera1.jpg?"+d.getTime());
    $("#webcam3").attr("src", "camera2.jpg?"+d.getTime());
+   $("#webcam5").attr("src", "camera5.jpg?"+d.getTime());
 };
 
 
@@ -364,6 +372,29 @@ function reload(){
   <div class="slider round"></div>
 </label>
 </th></tr>
+<tr><th colspan="2">
+	<img src="camera5.jpg" id="webcam5" alt="KAMERA WYLACZONA" />
+
+</th></tr>
+
+
+<tr><th>
+<a style="font-size: 50px">KUCHNIA CAM1</a></th>
+<th>
+<label class="switch">
+<?php
+	$output=shell_exec('/usr/bin/curl http://192.168.0.24:8081/cam/status/cam1');
+	if ( $output == 'ON' ) {
+			echo '<input id="cam5check"  type="checkbox" checked>';
+		} else {
+			echo '<input id="cam5check" type="checkbox">';
+		}
+
+?>
+  <div class="slider round"></div>
+</label>
+</th></tr>
+
 
 
 
