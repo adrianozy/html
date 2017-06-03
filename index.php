@@ -100,6 +100,16 @@ $(document).ready(function(){
     });
     });
 
+    $("#talk2check").click(function(){
+        $.post("exec.php", "talk2execute", function(data) {
+    });
+    });
+
+    $("#talk3check").click(function(){
+        $.post("exec.php", "talk3execute", function(data) {
+    });
+    });
+
     $("#cam1check").click(function(){
         $.post("exec.php", "cam1toogle", function(data) {
     });
@@ -418,8 +428,8 @@ function reload(){
 <th>
 <label class="switch">
 <?php
-	$output=shell_exec('/usr/bin/curl http://192.168.0.21:8080/talk/status');
-	if ( $output == 'ON' ) {
+	$output=shell_exec('/usr/bin/curl http://192.168.0.21:8080/gadacz/status/swiatlo');
+	if ( $output == '1' ) {
 			echo '<input id="talk1check"  type="checkbox" checked>';
 		} else {
 			echo '<input id="talk1check" type="checkbox">';
@@ -436,11 +446,11 @@ function reload(){
 <th>
 <label class="switch">
 <?php
-	$output=shell_exec('/usr/bin/curl http://192.168.0.21:8080/talk/status');
-	if ( $output == 'ON' ) {
-			echo '<input id="talk1check"  type="checkbox" checked>';
+	$output=shell_exec('/usr/bin/curl http://192.168.0.21:8080/gadacz/status/okna');
+	if ( $output == '1' ) {
+			echo '<input id="talk2check"  type="checkbox" checked>';
 		} else {
-			echo '<input id="talk1check" type="checkbox">';
+			echo '<input id="talk2check" type="checkbox">';
 		}
 
 ?>
@@ -448,6 +458,28 @@ function reload(){
 </label>
 </th>
 </tr>
+
+<tr>
+<th>
+<a style="font-size: 50px">GADAJ NA DRZWI</a></th>
+<th>
+<label class="switch">
+<?php
+	$output=shell_exec('/usr/bin/curl http://192.168.0.21:8080/gadacz/status/drzwi');
+	if ( $output == '1' ) {
+			echo '<input id="talk3check"  type="checkbox" checked>';
+		} else {
+			echo '<input id="talk3check" type="checkbox">';
+		}
+
+?>
+  <div class="slider round"></div>
+</label>
+</th>
+</tr>
+
+
+
 <tr>
 <th>
 <a style="font-size: 50px">GADAJ GŁOŚNO</a></th>
@@ -456,9 +488,9 @@ function reload(){
 <?php
 	$output=shell_exec('/usr/bin/curl http://192.168.0.21:8080/talk/status');
 	if ( $output == 'ON' ) {
-			echo '<input id="talk1check"  type="checkbox" checked>';
+			echo '<input id="talk4check"  type="checkbox" checked>';
 		} else {
-			echo '<input id="talk1check" type="checkbox">';
+			echo '<input id="talk4check" type="checkbox">';
 		}
 
 ?>

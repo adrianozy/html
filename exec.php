@@ -29,7 +29,15 @@ if (isset($_POST['a5execute'])){
 }
 
 if (isset($_POST['talk1execute'])){
-	$output1 = shell_exec('/usr/bin/curl http://192.168.0.21:8080/talk/toogle');
+	$output1 = shell_exec('/usr/bin/curl http://192.168.0.21:8080/gadacz/toggle/swiatlo');
+}
+
+if (isset($_POST['talk2execute'])){
+	$output1 = shell_exec('/usr/bin/curl http://192.168.0.21:8080/gadacz/toggle/okna');
+}
+
+if (isset($_POST['talk3execute'])){
+	$output1 = shell_exec('/usr/bin/curl http://192.168.0.21:8080/gadacz/toggle/drzwi');
 }
 
 if (isset($_POST['cam1execute'])){
@@ -70,7 +78,7 @@ if (isset($_POST['cam3toogle'])){
 }
 
 if (isset($_POST['cam5toogle'])){
-	$output1 = shell_exec('/usr/bin/curl http://192.168.0.24:8081/cam/toogle/cam1');
+//	$output1 = shell_exec('/usr/bin/curl http://192.168.0.24:8081/cam/toogle/cam1');
 }
 
 ?>
